@@ -40,8 +40,9 @@ const pizzaController = {
       })
       .catch(err => res.status(400).json(err));
   },
+
   // delete pizza
-deletePizza({ params }, res) {
+  deletePizza({ params }, res) {
     Pizza.findOneAndDelete({ _id: params.id })
       .then(dbPizzaData => {
         if (!dbPizzaData) {
@@ -52,8 +53,6 @@ deletePizza({ params }, res) {
       })
       .catch(err => res.status(400).json(err));
   }
-
-
 };
 
 module.exports = pizzaController;
